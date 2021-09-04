@@ -1,0 +1,6 @@
+D:\Code\C SHARP\C SHARP学习第一天\TestDemo\bin\Debug\TestDemo.exe.config
+D:\Code\C SHARP\C SHARP学习第一天\TestDemo\bin\Debug\TestDemo.exe
+D:\Code\C SHARP\C SHARP学习第一天\TestDemo\bin\Debug\TestDemo.pdb
+D:\Code\C SHARP\C SHARP学习第一天\TestDemo\obj\Debug\TestDemo.csprojResolveAssemblyReference.cache
+D:\Code\C SHARP\C SHARP学习第一天\TestDemo\obj\Debug\TestDemo.exe
+D:\Code\C SHARP\C SHARP学习第一天\TestDemo\obj\Debug\TestDemo.pdb

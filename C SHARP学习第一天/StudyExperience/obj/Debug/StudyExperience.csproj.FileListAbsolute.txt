@@ -1,0 +1,6 @@
+D:\Code\C SHARP\C SHARP学习第一天\StudyExperience\bin\Debug\StudyExperience.exe.config
+D:\Code\C SHARP\C SHARP学习第一天\StudyExperience\obj\Debug\StudyExperience.csprojResolveAssemblyReference.cache
+D:\Code\C SHARP\C SHARP学习第一天\StudyExperience\bin\Debug\StudyExperience.exe
+D:\Code\C SHARP\C SHARP学习第一天\StudyExperience\bin\Debug\StudyExperience.pdb
+D:\Code\C SHARP\C SHARP学习第一天\StudyExperience\obj\Debug\StudyExperience.exe
+D:\Code\C SHARP\C SHARP学习第一天\StudyExperience\obj\Debug\StudyExperience.pdb

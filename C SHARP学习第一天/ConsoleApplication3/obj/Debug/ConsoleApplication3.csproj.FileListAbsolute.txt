@@ -1,0 +1,5 @@
+D:\Code\C SHARP\C SHARP学习第一天\ConsoleApplication3\bin\Debug\ConsoleApplication3.exe.config
+D:\Code\C SHARP\C SHARP学习第一天\ConsoleApplication3\bin\Debug\ConsoleApplication3.exe
+D:\Code\C SHARP\C SHARP学习第一天\ConsoleApplication3\bin\Debug\ConsoleApplication3.pdb
+D:\Code\C SHARP\C SHARP学习第一天\ConsoleApplication3\obj\Debug\ConsoleApplication3.exe
+D:\Code\C SHARP\C SHARP学习第一天\ConsoleApplication3\obj\Debug\ConsoleApplication3.pdb
