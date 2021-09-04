@@ -11,8 +11,8 @@ namespace ConsoleApplication3
         static void Main(string[] args)
         {
             //在桌面创建一个文本文档
-            string str = "今天是个好日子！";
-            System.IO.File.WriteAllText(@"C:\Users\DELL\Desktop\TextDemo.txt",str);
+            string str = "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";
+            System.IO.File.WriteAllText(@"C:\Users\DELL\Desktop\GitToken.txt",str);
             Console.WriteLine("创建成功！");
             Console.ReadKey();
         }
