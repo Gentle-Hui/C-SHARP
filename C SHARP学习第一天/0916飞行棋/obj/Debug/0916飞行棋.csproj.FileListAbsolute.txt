@@ -1,0 +1,6 @@
+D:\DailyCode\C-SHARP\C SHARP学习第一天\0916飞行棋\bin\Debug\0916飞行棋.exe.config
+D:\DailyCode\C-SHARP\C SHARP学习第一天\0916飞行棋\bin\Debug\0916飞行棋.exe
+D:\DailyCode\C-SHARP\C SHARP学习第一天\0916飞行棋\bin\Debug\0916飞行棋.pdb
+D:\DailyCode\C-SHARP\C SHARP学习第一天\0916飞行棋\obj\Debug\0916飞行棋.exe
+D:\DailyCode\C-SHARP\C SHARP学习第一天\0916飞行棋\obj\Debug\0916飞行棋.pdb
+D:\DailyCode\C-SHARP\C SHARP学习第一天\0916飞行棋\obj\Debug\0916飞行棋.csprojResolveAssemblyReference.cache

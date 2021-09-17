@@ -1,0 +1,15 @@
+﻿生成启动时间为 2021/9/17 18:51:13。
+     1>项目“D:\DailyCode\C-SHARP\C SHARP学习第一天\Text\Text.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\software\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt TextDemo.c
+         TextDemo.c
+     1>d:\dailycode\c-sharp\c sharp学习第一天\text\textdemo.c(17): warning C4013: “scanf_sa”未定义；假设外部返回 int
+       Link:
+         D:\software\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\DailyCode\C-SHARP\C SHARP学习第一天\Debug\Text.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\DailyCode\C-SHARP\C SHARP学习第一天\Debug\Text.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\DailyCode\C-SHARP\C SHARP学习第一天\Debug\Text.lib" /MACHINE:X86 Debug\TextDemo.obj
+     1>TextDemo.obj : error LNK2019: 无法解析的外部符号 _scanf_sa，该符号在函数 _main 中被引用
+     1>D:\DailyCode\C-SHARP\C SHARP学习第一天\Debug\Text.exe : fatal error LNK1120: 1 个无法解析的外部命令
+     1>已完成生成项目“D:\DailyCode\C-SHARP\C SHARP学习第一天\Text\Text.vcxproj”(Build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.63

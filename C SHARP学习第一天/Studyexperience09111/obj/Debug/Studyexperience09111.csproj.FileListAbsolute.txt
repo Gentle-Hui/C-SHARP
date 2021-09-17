@@ -1,0 +1,6 @@
+D:\DailyCode\C-SHARP\C SHARP学习第一天\Studyexperience09111\bin\Debug\Studyexperience09111.exe.config
+D:\DailyCode\C-SHARP\C SHARP学习第一天\Studyexperience09111\bin\Debug\Studyexperience09111.exe
+D:\DailyCode\C-SHARP\C SHARP学习第一天\Studyexperience09111\bin\Debug\Studyexperience09111.pdb
+D:\DailyCode\C-SHARP\C SHARP学习第一天\Studyexperience09111\obj\Debug\Studyexperience09111.csprojResolveAssemblyReference.cache
+D:\DailyCode\C-SHARP\C SHARP学习第一天\Studyexperience09111\obj\Debug\Studyexperience09111.exe
+D:\DailyCode\C-SHARP\C SHARP学习第一天\Studyexperience09111\obj\Debug\Studyexperience09111.pdb

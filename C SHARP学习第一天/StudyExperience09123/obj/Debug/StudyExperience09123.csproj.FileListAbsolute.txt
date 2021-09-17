@@ -1,0 +1,5 @@
+D:\DailyCode\C-SHARP\C SHARP学习第一天\StudyExperience09123\bin\Debug\StudyExperience09123.exe.config
+D:\DailyCode\C-SHARP\C SHARP学习第一天\StudyExperience09123\bin\Debug\StudyExperience09123.exe
+D:\DailyCode\C-SHARP\C SHARP学习第一天\StudyExperience09123\bin\Debug\StudyExperience09123.pdb
+D:\DailyCode\C-SHARP\C SHARP学习第一天\StudyExperience09123\obj\Debug\StudyExperience09123.exe
+D:\DailyCode\C-SHARP\C SHARP学习第一天\StudyExperience09123\obj\Debug\StudyExperience09123.pdb
