@@ -13,28 +13,76 @@ namespace _0916飞行棋
         //使用静态数组保存玩家AandB的坐标
         static int[] PlayersSite = new int[2];
         //使用静态数组保存玩家姓名
-        static string[] PlayersName=new string[2];
+        static string[] PlayersName = new string[2];
+        //使用静态数组给玩家套上标记
+        static bool[] Flags = new bool[2];//布尔数组内默认为0
         static void Main(string[] args)
         {
             GameHead();
+            #region 输入玩家姓名
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("请输入玩家A的姓名：");
-            PlayersName[0]=Console.ReadLine();
-            while(PlayersName[0]==""){
+            PlayersName[0] = Console.ReadLine();
+            while (PlayersName[0] == "")
+            {
                 Console.WriteLine("输入的的姓名不能为空！");
             }
             Console.WriteLine("请输入玩家B的姓名：");
             PlayersName[1] = Console.ReadLine();
-            while(PlayersName[1]==""||PlayersName[0]==PlayersName[1]){
+            while (PlayersName[1] == "" || PlayersName[0] == PlayersName[1])
+            {
                 if (PlayersName[1] == "")
                 {
                     Console.WriteLine("输入的姓名不能为空！");
+                    PlayersName[1] = Console.ReadLine();
                 }
-                else {
+                else
+                {
                     Console.WriteLine("输入的姓名已重复！");
+                    PlayersName[1] = Console.ReadLine();
                 }
             }
+            #endregion
+            //输入姓名之后要清屏一次然后重新调用游戏
+            Console.Clear();
+            GameHead();
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("{0}的士兵用A表示", PlayersName[0]);
+            Console.WriteLine("{0}的士兵用B表示", PlayersName[1]);
             InitiallMap();
             DrawMap();
+            //当玩家A和B都没有在终点时，两个玩家可以不停的玩游戏
+            #region 游戏过程
+            while (PlayersSite[0] < 99 && PlayersSite[1] < 99)
+            {
+                if (Flags[0] == false)
+                {
+                    PlayGame(0);
+                }
+                else
+                {
+                    Flags[0] = false;
+                }
+                if(PlayersSite[0]>=99){
+                    Console.WriteLine("{0}无耻的赢了{1}",PlayersName[0],PlayersName[1]);
+                    break;
+                }
+                if (Flags[1] == false)
+                {
+                    PlayGame(1);
+                }
+                else
+                {
+                    Flags[1] = false;
+                }
+                if (PlayersSite[1] >= 99)
+                {
+                    Console.WriteLine("{0}无耻的赢了{1}", PlayersName[1], PlayersName[0]);
+                    break;
+                }
+            }
+            #endregion
+
             Console.ReadKey();
         }
 
@@ -76,6 +124,7 @@ namespace _0916飞行棋
         //绘制地图
         public static void DrawMap()
         {
+            Console.WriteLine("图例：普通关卡□   幸运轮盘◎   地雷☆   暂停〓   时空隧道卍  ");
             #region 第一横行
             for (int i = 0; i < 30; i++)
             {
@@ -94,7 +143,7 @@ namespace _0916飞行棋
             }
             #endregion
             #region 第二横排
-            for (int i = 35; i < 65; i++)
+            for (int i = 64; i >= 35; i--)
             {
                 Console.Write(DrawPass(i));
             }
@@ -115,22 +164,21 @@ namespace _0916飞行棋
             #endregion
         }
 
-
         //绘制关卡
         public static string DrawPass(int i)
         {
             string a = "";
             if (PlayersSite[0] == PlayersSite[1] && PlayersSite[1] == i)
             {
-                a = "<>";
+                Console.ForegroundColor = ConsoleColor.White; a = "<>";
             }
             else if (PlayersSite[0] == i)
             {
-                a = "Ａ";
+                Console.ForegroundColor = ConsoleColor.White; a = "Ａ";
             }
             else if (PlayersSite[1] == i)
             {
-                a = "Ｂ";
+                Console.ForegroundColor = ConsoleColor.White; a = "Ｂ";
             }
             else
             {
@@ -149,6 +197,106 @@ namespace _0916飞行棋
                 }
             }
             return a;
+        }
+
+        //玩游戏
+        public static void PlayGame(int PlayersNumber)
+        {
+            Console.WriteLine("{0}按下任意键开始掷色子", PlayersName[PlayersNumber]);
+            Console.ReadKey(true);
+            Random Dise = new Random();
+            int DiseNumber = Dise.Next(1, 7);
+            //  int DiseNumber = 4;//调试用
+            Console.WriteLine("{0}掷出了{1}", PlayersName[PlayersNumber], DiseNumber);
+            PlayersSite[PlayersNumber] += DiseNumber;
+            Console.ReadKey(true);
+            Console.WriteLine("{0}按下任意键开始行动", PlayersName[PlayersNumber]);
+            Console.ReadKey(true);
+            Console.WriteLine("{0}行动完了", PlayersName[PlayersNumber]);
+            Console.ReadKey(true);
+            if (PlayersSite[PlayersNumber] == PlayersSite[1 - PlayersNumber])
+            {
+                Console.WriteLine("玩家{0}踩到了玩家{1}，玩家{2}退后六格", PlayersName[PlayersNumber], PlayersName[1 - PlayersNumber], PlayersName[1 - PlayersNumber]);
+                PlayersSite[1 - PlayersNumber] -= 6;
+                Console.ReadKey(true);
+
+            }
+            else
+            {
+                switch (Maps[PlayersSite[PlayersNumber]])
+                {
+                    case 0: Console.WriteLine("{0}踩到了方块，安全。", PlayersName[PlayersNumber]); Console.ReadKey(true);
+                        break;
+                    case 1: Console.WriteLine("{0}踩到了幸运轮盘，请选择1--交换对方位置，2--轰炸对方", PlayersName[PlayersNumber]);
+                        string input = Console.ReadLine();
+                        while (true)
+                        {
+                            if (input == "1")
+                            {
+                                Console.WriteLine("玩家{0}选择和玩家{1}交换位置", PlayersName[PlayersNumber], PlayersName[1 - PlayersNumber]);
+                                Console.ReadKey(true);
+                                int temp = PlayersSite[PlayersNumber];
+                                PlayersSite[PlayersNumber] = PlayersSite[1 - PlayersNumber];
+                                PlayersSite[1 - PlayersNumber] = temp;
+                                Console.WriteLine("交换完成！按下任意键继续游戏。");
+                                Console.ReadKey(true);
+                                break;
+                            }
+                            else if (input == "2")
+                            {
+                                Console.WriteLine("玩家{0}选择轰炸玩家{1}", PlayersName[PlayersNumber], PlayersName[1 - PlayersNumber]);
+                                Console.ReadKey(true);
+                                PlayersSite[1 - PlayersNumber] -= 6;
+                                Console.WriteLine("BOOM!!!  轰炸完成，按下任意键继续游戏。");
+                                Console.ReadKey(true);
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("只能输入1或2  1--交换位置  2--轰炸对方");
+                                input = Console.ReadLine();
+                            }
+                        }
+                        break;
+                    case 2: Console.WriteLine("BOOM!!!   {0}踩到了地雷，后退六格", PlayersName[PlayersNumber]);
+                        Console.ReadKey(true);
+                        PlayersSite[PlayersNumber] -= 6;
+                        break;
+                    case 3: Console.WriteLine("{0}踩到了暂停，暂停一回合", PlayersName[PlayersNumber]);
+                        Flags[PlayersNumber] = true;
+                        Console.ReadKey(true);
+                        break;
+                    case 4: Console.WriteLine("{0}踩到了时空隧道，前进十格", PlayersName[PlayersNumber]);
+                        PlayersSite[PlayersNumber] += 10;
+                        Console.ReadKey(true);
+                        break;
+                }
+            }
+            ChangeSite();
+            Console.Clear();
+            DrawMap();
+
+        }
+
+        //坐标变化时的限制
+        public static void ChangeSite()
+        {
+            if (PlayersSite[0] < 0)
+            {
+                PlayersSite[0] = 0;
+            }
+            if (PlayersSite[0] >= 99)
+            {
+                PlayersSite[0] = 99;
+            }
+            if (PlayersSite[1] < 0)
+            {
+                PlayersSite[1] = 0;
+            }
+            if (PlayersSite[1] >= 99)
+            {
+                PlayersSite[1] = 99;
+            }
         }
     }
 }
